@@ -21,15 +21,18 @@ function App() {
   }
 
   return (
-    <div className="GuessGame">
-      {isGameOver ? (
-        <div className="GuessGame__answer-found">{`Great! You have found the right answer: ${CORRECT_ANSWER.join(
-          ""
-        )}`}</div>
-      ) : (
-        renderGuessGrid()
-      )}
-    </div>
+    <main className="GuessGame">
+      <h1 className="GuessGame__header">Guess The Word</h1>
+      <section>
+        {isGameOver ? (
+          <div className="GuessGame__answer-found">{`Great! You have found the right answer: ${CORRECT_ANSWER.join(
+            ""
+          )}`}</div>
+        ) : (
+          renderGuessGrid()
+        )}
+      </section>
+    </main>
   )
 }
 

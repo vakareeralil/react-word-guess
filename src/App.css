@@ -7,5 +7,9 @@
   width: 100vw;
   height: 100vh;
 }
+.GuessGame__header {
+  font-size: 40px;
+  text-transform: uppercase;
+}
 .GuessGame__answer-found {
 }
