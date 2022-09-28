@@ -1,8 +1,9 @@
 import React, {useState, useRef, useEffect} from "react"
 import "./GuessGrid.css"
 
-const GuessGrid = ({answer, setGameOver}) => {
-  const GRID_SIZE = 5
+const GRID_SIZE = 5
+
+const GuessGrid = ({answer, setIsWordGuessed, handleGridComplete}) => {
   const [currentWord, setCurrentWord] = useState("")
   const inputRefs = useRef([])
   const [result, setResult] = useState([])
@@ -64,18 +65,19 @@ const GuessGrid = ({answer, setGameOver}) => {
           }
         }
         if (result.every((value) => value === 1)) {
-          setGameOver(true)
+          setIsWordGuessed(true)
         }
         return result
       }
 
       if (currentWordLength === GRID_SIZE) {
         setResult(checkGridValue(currentWord))
+        handleGridComplete()
       } else {
         inputRefs.current[currentWordLength].focus()
       }
     },
-    [answer, currentWord, setGameOver]
+    [answer, currentWord, handleGridComplete, setIsWordGuessed]
   )
 
   return formGrid()
