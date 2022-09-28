@@ -1,0 +1,26 @@
+.GuessGrid__input {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #999;
+  margin-right: 8px;
+  margin-bottom: 4px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.GuessGrid__input--success:disabled {
+  border-color: transparent;
+  background-color: #58d758;
+}
+
+.GuessGrid__input--error:disabled {
+  border-color: transparent;
+  background-color: #f94343;
+}
+
+.GuessGrid__input--misplaced:disabled {
+  border-color: transparent;
+  background-color: #e9e936;
+}
